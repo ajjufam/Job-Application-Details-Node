@@ -1,7 +1,7 @@
 const Joi = require("joi");
 const { UserRoleEnum } = require("../../enums");
 
-const userValidationSchema = Joi.object({
+const userRegisterSchema = Joi.object({
   fullName: Joi.string().trim().min(3).max(50).required(),
   email: Joi.string().email().required(),
   password: Joi.string()
@@ -22,4 +22,4 @@ const userValidationSchema = Joi.object({
   }),
 });
 
-module.exports = userValidationSchema; // ✅ Export the schema directly
+module.exports = { userRegisterSchema }; // ✅ Export the schema directly
