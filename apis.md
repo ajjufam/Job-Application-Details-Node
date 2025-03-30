@@ -7,7 +7,6 @@
     phoneNo:string
     role:enum
     reportingManager:id
-    notifications:[string]
     }
     res:{
     statusCode:201,
