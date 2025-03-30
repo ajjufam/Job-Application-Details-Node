@@ -12,7 +12,6 @@ const validateRequest = (schema) => (req, res, next) => {
       .status(400)
       .json({ error: error.details.map((err) => err.message) });
   }
-
   next();
 };
 

@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js",
+    "start": "node --trace-warnings app.js",
     "dev": "nodemon app.js"
   },
   "repository": {
@@ -28,7 +28,9 @@
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.13.1",
     "nodemon": "^3.1.9",
-    "pino": "^9.6.0"
+    "pino": "^9.6.0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1"
   },
   "devDependencies": {
     "pino-pretty": "^13.0.0"
