@@ -1,0 +1,33 @@
+{
+  "name": "job-application-details-node",
+  "version": "1.0.0",
+  "description": "Project using nodejs mongodb",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ajjufam/Job-Application-Details-Node.git"
+  },
+  "author": "Prajwal A U",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ajjufam/Job-Application-Details-Node/issues"
+  },
+  "homepage": "https://github.com/ajjufam/Job-Application-Details-Node#readme",
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "bunyan": "^1.8.15",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mongoose": "^8.13.1",
+    "nodemon": "^3.1.9",
+    "pino": "^9.6.0"
+  },
+  "devDependencies": {
+    "pino-pretty": "^13.0.0"
+  }
+}

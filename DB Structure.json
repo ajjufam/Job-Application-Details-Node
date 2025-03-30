@@ -1,0 +1,53 @@
+// 1) UserDB
+{
+    "_id":"string", //unique
+    "Name":"String",
+    "email":"String", //unique
+    "password":"String", //with some validation
+    "phoneNo":"String",
+    "role":"Enum" //["admin/HR","superAdmin","candidate","employee"]
+},
+
+// 2) Job Application details DB
+{
+    "_id":"String", //unique
+    "companyName":"String",
+    "companyWebsite":"String/url",
+    "position":"String",
+    "candiateId":"UserDB.Name",
+    "CandidateName":"String",
+    "address":{
+        "country":"String",
+        "state":"String"
+    },
+    "appliedDate":"Date",
+    "resume":"String",
+    "shortListed":"boolean",
+    "experienced":"boolean",
+    "currentCTC":"number",
+    "expectedCTC":"number",
+    "noticePeriod":"boolean",
+    "lastWorkingDate":"Date",
+    "daysRemains":"Number", //lastWorkingDate-currentDay
+    "interviewStatus":"enum", //[todo,inprogress,done]
+    "offered":"boolean", //offered or not
+    "joiningDateIssued":"boolean",
+    "joiningDate":"Date",
+    "onBorded":"boolean",  // if this got true then no more changes here
+    "notifications":["string"] // for now insted of sending email or messages will store notifications here
+}
+
+//3) Interview DB
+{
+    "_id":"String",
+    "userId":"UserDb._id",
+    "interviewerId":"userDb._id", // but this is not employee id 
+    "rounds":[
+        {
+            "roundNumber":"Enum", //[1,2,3]
+            "type":"enum", //["applitude/technical","coding","HR"] deside based on roundNumber
+            "status":"boolean",
+            "remarks":"String"
+        }
+    ]
+}
