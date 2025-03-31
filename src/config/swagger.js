@@ -1,5 +1,6 @@
 const swaggerJsdoc = require("swagger-jsdoc");
 const swaggerUi = require("swagger-ui-express");
+const logger = require("../middlewares/logger");
 
 // Swagger configuration
 const options = {
@@ -23,7 +24,7 @@ const swaggerSpec = swaggerJsdoc(options);
 
 const setupSwagger = (app) => {
   app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
-  console.log("Swagger docs available at http://localhost:7000/api-docs");
+  logger.info("Swagger docs available at http://localhost:7000/api-docs");
 };
 
 module.exports = setupSwagger;

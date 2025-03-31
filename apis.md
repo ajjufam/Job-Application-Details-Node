@@ -34,9 +34,23 @@
     password:strig
     }
 
-    req:{
+    res:{
     statusCode:200,
-    message:'login successfull'
+    message:'login Successfull',
+    data:token
+    }
+
+    Error
+    {
+    "statusCode": 401,
+    "message": "Invalid email or password",
+    "error": "Unauthorized"
+    }
+
+    {
+    statusCode:500 //Internal server error
+    message:'internal server error',
+    error:"Internal Server Error"
     }
 
 3.  Update Password
@@ -73,7 +87,7 @@
     error:"Internal Server Error"
     }
 
-4.  Reset Password
+4.  Reset Password ////////
     url : project/reset-password PUT/PATCH
     req:{
     email:string,
@@ -106,34 +120,8 @@
     error:"Internal Server Error"
     }
 
-5.  Login / Sign In
-    url: project/login POST
-    req:{
-    email:string,
-    password:string
-    }
-
-    res:{
-    statusCode:200,
-    message:'login Successfull',
-    data:token
-    }
-
-    Error
-    {
-    "statusCode": 401,
-    "message": "Invalid email or password",
-    "error": "Unauthorized"
-    }
-
-    {
-    statusCode:500 //Internal server error
-    message:'internal server error',
-    error:"Internal Server Error"
-    }
-
-6.  Update Role
-    url:project/update-role
+5.  Update Role
+    url: api/v1/job/app/tracker/users/update-role
     req:{
     email:string,
     role:string
@@ -152,8 +140,8 @@
     error:"Internal Server Error"
     }
 
-7.  Update reportingManager
-    url:project/update-reporting-manager
+6.  Update reportingManager
+    url: api/v1/job/app/tracker/users/update-reporting-manager
     req:{
     email:string,
     reportingManager:string //id
@@ -178,11 +166,13 @@
     error:"Internal Server Error"
     }
 
-8.  add Notification
+7.  add Notification
     url:project/temp-notification POST
     req:{
     email:string,
-    notification:string
+    subject:string,
+    msg:string,
+    timeAnddate:date
     }
 
     res:{
@@ -204,7 +194,7 @@
     error:"Internal Server Error"
     }
 
-9.  Apply job
+8.  Apply job
     url:project/apply-job POST
     req:{
     "companyName":"string",
@@ -259,7 +249,7 @@
     error:'Internal server error'
     }
 
-10. update shortlisted status
+9.  update shortlisted status
     url:project/short-list-status PATCH/PUT
     req:{
     candidateId:'string',
@@ -292,7 +282,7 @@
     error:'Internal server error'
     }
 
-11. Interview status
+10. Interview status
     update Interview status
     url:project/interview-status PATCH/PUT
     req:{
@@ -326,7 +316,7 @@
     error:'Internal server error'
     }
 
-12. Offered status
+11. Offered status
     url:project/offered-status //PATCH/PUT
     req:{
     candidateId:'string',
@@ -360,7 +350,7 @@
     error:'Internal server error'
     }
 
-13. Joining status
+12. Joining status
     url:project/joining-status // Patch/put
     req:{
     candidateId:'string',
@@ -394,7 +384,7 @@
     error:'Internal server error'
     }
 
-14. onboard status
+13. onboard status
     url:project/onboard-status
     req:{
     candidateId:'string',
@@ -427,7 +417,7 @@
     error:'Internal server error'
     }
 
-15. schedule interview
+14. schedule interview
     url:project/schedule-interview //POST
     req:{
     candidateId:'string',
@@ -466,7 +456,7 @@
     error:'Internal server error'
     }
 
-16. update interview result status
+15. update interview result status
     url:project/interview-result //PATCH/PUT
     req:{
     candidateId:'string',
@@ -507,7 +497,7 @@
     error:'Internal server error'
     }
 
-17. notification handle
+16. notification handle
     req:{
     candidateId:'string',
     jobId:'string',

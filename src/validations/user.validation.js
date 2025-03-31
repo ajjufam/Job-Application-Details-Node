@@ -53,8 +53,22 @@ const userUpdatePassword = Joi.object({
     .messages({ "any.only": "Confirm password must match new password" }),
 });
 
+const userUpdateRoll = Joi.object({
+  email: Joi.string().email().required(),
+  role: Joi.string()
+    .valid(...Object.values(UserRoleEnum))
+    .required(),
+});
+
+const userUpdareReportingManager = Joi.object({
+  email: Joi.string().email().required(),
+  reportingManager: Joi.string().length(24).required(),
+});
+
 module.exports = {
   userRegisterValidation,
   userLoginValidation,
   userUpdatePassword,
+  userUpdateRoll,
+  userUpdareReportingManager,
 }; // ✅ Export the schema directly
