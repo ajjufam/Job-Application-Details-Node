@@ -22,6 +22,8 @@
     "bcryptjs": "^3.0.2",
     "body-parser": "^2.2.0",
     "bunyan": "^1.8.15",
+    "cookie-parser": "^1.4.7",
+    "csrf": "^3.1.0",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "joi": "^17.13.3",
